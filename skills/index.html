@@ -5,12 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>JD Meyers: Skills</title>
 <meta name="description" content="Skills profile for JD Meyers, backed by real work.">
-<meta name="theme-color" content="#06070a">
+<meta name="theme-color" content="#07060a">
 <style>
 :root{
-  --bg:#06070a; --panel:#0d1015; --panel2:#11151c; --line:#1b212b; --line2:#2a3341;
-  --text:#eef1f6; --muted:#8b95a7; --dim:#5b6577;
-  --a1:#7c8cff; --a2:#4fd3ff;
+  --bg:#07060a; --glass:rgba(255,255,255,.055); --glass2:rgba(255,255,255,.09);
+  --line:rgba(255,255,255,.10); --line2:rgba(255,255,255,.20);
+  --text:#f6f1ea; --muted:#b3a99c; --dim:#7d7468;
+  --a1:#ff8a3d; --a2:#ffc470;
   --pad:clamp(20px,4.5vw,72px);
   --ease:cubic-bezier(.2,.7,.2,1);
 }
@@ -21,17 +22,27 @@ body{margin:0;min-height:100vh;background:var(--bg);color:var(--text);
   -webkit-font-smoothing:antialiased;overflow-x:hidden}
 a{color:inherit}
 
+/* ambient glow behind the glass */
+body::before{content:"";position:fixed;inset:-10%;z-index:-1;pointer-events:none;
+  background:
+    radial-gradient(34vw 34vw at 50% 6%,rgba(255,196,112,.34),transparent 62%),
+    radial-gradient(40vw 40vw at 92% 78%,rgba(255,110,30,.30),transparent 62%),
+    radial-gradient(38vw 38vw at 4% 58%,rgba(24,92,110,.34),transparent 62%),
+    radial-gradient(30vw 30vw at 20% 100%,rgba(255,138,61,.14),transparent 62%),
+    var(--bg);
+  filter:blur(30px)}
+
 /* top bar */
 .top{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:20px;
-  padding:14px var(--pad);background:rgba(6,7,10,.72);
-  -webkit-backdrop-filter:blur(18px) saturate(1.4);backdrop-filter:blur(18px) saturate(1.4);
+  padding:14px var(--pad);background:rgba(10,8,8,.38);
+  -webkit-backdrop-filter:blur(26px) saturate(1.5);backdrop-filter:blur(26px) saturate(1.5);
   border-bottom:1px solid var(--line)}
 .mark{font-weight:700;letter-spacing:.02em;font-size:.95rem;white-space:nowrap}
 .mark i{font-style:normal;background:linear-gradient(90deg,var(--a1),var(--a2));-webkit-background-clip:text;background-clip:text;color:transparent}
 .spacer{flex:1}
 .views{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none}
 .views::-webkit-scrollbar{display:none}
-.chip{border:1px solid var(--line2);background:transparent;color:var(--muted);padding:7px 14px;border-radius:999px;
+.chip{border:1px solid var(--line);background:var(--glass);color:var(--muted);padding:7px 14px;border-radius:999px;
   font:inherit;font-size:.85rem;text-decoration:none;white-space:nowrap;transition:all .25s var(--ease)}
 .chip:hover{color:var(--text);border-color:var(--a1)}
 .chip[aria-current="true"]{color:#06070a;background:linear-gradient(90deg,var(--a1),var(--a2));border-color:transparent;font-weight:600}
@@ -39,25 +50,17 @@ a{color:inherit}
 
 /* hero */
 .hero{position:relative;min-height:min(78vh,820px);display:flex;flex-direction:column;justify-content:flex-end;
-  padding:clamp(56px,10vh,120px) var(--pad) clamp(36px,6vh,64px);overflow:hidden;
-  background:
-    radial-gradient(70vw 50vw at 88% -10%,rgba(124,140,255,.22),transparent 60%),
-    radial-gradient(50vw 40vw at 0% 110%,rgba(79,211,255,.12),transparent 60%),
-    var(--bg)}
-.hero::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
-  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
-  background-size:72px 72px;
-  -webkit-mask-image:radial-gradient(80% 70% at 70% 20%,#000,transparent 75%);mask-image:radial-gradient(80% 70% at 70% 20%,#000,transparent 75%)}
+  padding:clamp(56px,10vh,120px) var(--pad) clamp(36px,6vh,64px)}
 .hero>*{position:relative}
 .kicker{font-size:.78rem;letter-spacing:.28em;text-transform:uppercase;color:var(--a2);margin:0 0 22px}
 h1{margin:0;font-weight:800;letter-spacing:-.045em;line-height:.92;font-size:clamp(3.4rem,12.5vw,12rem)}
-h1 span{display:block;background:linear-gradient(100deg,#fff 30%,var(--a1) 70%,var(--a2));-webkit-background-clip:text;background-clip:text;color:transparent}
+h1 span{display:block;background:linear-gradient(100deg,#fff 20%,var(--a2) 60%,var(--a1));-webkit-background-clip:text;background-clip:text;color:transparent}
 .headline{margin:28px 0 0;font-size:clamp(1.15rem,2.2vw,1.8rem);font-weight:500;letter-spacing:-.01em;max-width:30ch;color:var(--text)}
 .summary{margin:18px 0 0;color:var(--muted);max-width:62ch;font-size:1.02rem}
-.stats{display:flex;flex-wrap:wrap;gap:0;margin-top:clamp(32px,6vh,64px);border-top:1px solid var(--line)}
-.stat{flex:1 1 160px;padding:20px 0 0;border-right:1px solid var(--line);padding-left:20px}
-.stat:first-child{padding-left:0}
-.stat:last-child{border-right:0}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-top:clamp(32px,6vh,64px);max-width:760px}
+.stat{padding:18px 22px;border:1px solid var(--line);border-radius:20px;background:var(--glass);
+  -webkit-backdrop-filter:blur(22px) saturate(1.3);backdrop-filter:blur(22px) saturate(1.3);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 18px 40px -22px rgba(0,0,0,.7)}
 .stat b{display:block;font-size:clamp(1.6rem,3vw,2.6rem);font-weight:700;letter-spacing:-.03em}
 .stat small{color:var(--dim);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase}
 
@@ -70,17 +73,19 @@ main{padding:0 0 clamp(60px,10vh,120px)}
 .grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(min(100%,380px),1fr));align-items:start}
 
 /* tiles */
-.tile{--mx:50%;--my:0%;position:relative;border:1px solid var(--line);border-radius:18px;background:
-  radial-gradient(420px circle at var(--mx) var(--my),rgba(124,140,255,.14),transparent 45%),var(--panel);
+.tile{--mx:50%;--my:0%;position:relative;border:1px solid var(--line);border-radius:24px;background:
+  radial-gradient(380px circle at var(--mx) var(--my),rgba(255,170,90,.18),transparent 50%),var(--glass);
+  -webkit-backdrop-filter:blur(24px) saturate(1.35);backdrop-filter:blur(24px) saturate(1.35);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.14),0 24px 50px -28px rgba(0,0,0,.8);
   transition:border-color .3s var(--ease),transform .4s var(--ease),opacity .6s var(--ease);
   opacity:0;transform:translateY(14px)}
 .tile.in{opacity:1;transform:none}
 .tile:hover{border-color:var(--line2)}
-.tile[open]{border-color:var(--a1);background:
-  radial-gradient(520px circle at var(--mx) var(--my),rgba(79,211,255,.12),transparent 50%),var(--panel2)}
+.tile[open]{border-color:rgba(255,160,80,.55);background:
+  radial-gradient(480px circle at var(--mx) var(--my),rgba(255,170,90,.22),transparent 55%),var(--glass2)}
 .tile summary{list-style:none;cursor:pointer;padding:22px 24px;display:grid;gap:10px;outline:none}
 .tile summary::-webkit-details-marker{display:none}
-.tile summary:focus-visible{box-shadow:0 0 0 2px var(--a2) inset;border-radius:18px}
+.tile summary:focus-visible{box-shadow:0 0 0 2px var(--a2) inset;border-radius:24px}
 .row{display:flex;justify-content:space-between;align-items:center;gap:12px}
 .idx{font-size:.75rem;letter-spacing:.2em;color:var(--dim);font-variant-numeric:tabular-nums}
 .plus{width:26px;height:26px;border-radius:50%;border:1px solid var(--line2);position:relative;flex:none;transition:transform .35s var(--ease),border-color .3s}
@@ -91,7 +96,7 @@ main{padding:0 0 clamp(60px,10vh,120px)}
 .name{font-size:1.28rem;font-weight:650;letter-spacing:-.02em;line-height:1.2}
 .desc{color:var(--muted);font-size:.95rem}
 .meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;color:var(--dim);font-size:.8rem;margin-top:2px}
-.depth{border:1px solid var(--a1);color:var(--a1);border-radius:999px;padding:1px 10px;font-size:.75rem;letter-spacing:.04em}
+.depth{border:1px solid var(--a1);color:var(--a2);border-radius:999px;padding:1px 10px;font-size:.75rem;letter-spacing:.04em}
 .ev{padding:2px 24px 22px}
 .ev-item{padding:14px 0;border-top:1px solid var(--line)}
 .ev-item h3{margin:0 0 3px;font-size:.88rem;font-weight:600}
@@ -115,7 +120,9 @@ footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;paddin
 @media print{
   :root{color-scheme:light}
   body{background:#fff;color:#000;font-size:10pt}
-  .top,.hero::before,.plus,.stats,.kicker{display:none}
+  body::before{display:none}
+  .tile{backdrop-filter:none;-webkit-backdrop-filter:none;box-shadow:none}
+  .top,.plus,.stats,.kicker{display:none}
   .hero{min-height:0;padding:0 0 10pt;background:none}
   h1{font-size:26pt;letter-spacing:-.02em}
   h1 span{background:none;color:#000;-webkit-text-fill-color:#000}
