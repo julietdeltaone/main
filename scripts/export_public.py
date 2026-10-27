@@ -13,7 +13,7 @@ import sys
 from pathlib import Path
 
 KEEP = ["id", "name", "category", "summary", "depth", "verified",
-        "first_seen", "last_seen", "audiences", "tier", "evidence"]
+        "first_seen", "last_seen", "audiences", "tier", "evidence", "self_rating"]
 EVIDENCE_KEEP = ["title", "note", "link"]
 
 

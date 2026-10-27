@@ -2,7 +2,7 @@
   "updated": "2026-10-27",
   "name": "JD Meyers",
   "headline": "Photo, video and drone operator who builds web tools and automation.",
-  "summary": "I run a photography, videography and FAA Part 107 drone business in the North Country of New York, and I build the dashboards, pipelines and contracts that keep it running. This page lists the skills I can back with real work. Depth markers appear only after an entry has been checked against its evidence.",
+  "summary": "I run a photography, videography and FAA Part 107 drone business in the North Country of New York, and I build the dashboards, pipelines and contracts that keep it running. This page lists the skills I can back with real work.",
   "views": {
     "all": {
       "label": "All",
@@ -53,7 +53,8 @@
           "note": "Paid coverage across the season, from preparation through delivery and review requests.",
           "link": "https://jdmeyersjr.com"
         }
-      ]
+      ],
+      "self_rating": 4
     },
     {
       "id": "portrait-real-estate",
@@ -74,14 +75,15 @@
           "note": "New service line with its own equipment kit, light and dark backgrounds, and a signup system.",
           "link": "https://jdmeyersjr.com"
         }
-      ]
+      ],
+      "self_rating": 4
     },
     {
       "id": "video-audio-post",
       "name": "Video and audio post-production",
       "category": "Photo, Video and Drone",
       "summary": "Final Cut Pro editing, highlight and full-ceremony edits, and licensed-music scoring.",
-      "depth": "Advanced",
+      "depth": "Working",
       "verified": false,
       "first_seen": "2019",
       "last_seen": "2026-06",
@@ -98,7 +100,8 @@
           "title": "Audio",
           "note": "Logic Pro project work and licensed music for client video. This is the thinnest part of the skill."
         }
-      ]
+      ],
+      "self_rating": 3
     },
     {
       "id": "commercial-drone",
@@ -122,14 +125,15 @@
           "title": "Subcontract work",
           "note": "Operator work for drone service networks in 2025 and 2026."
         }
-      ]
+      ],
+      "self_rating": 4
     },
     {
       "id": "front-end",
       "name": "Front-end web development",
       "category": "Web, Software and Automation",
       "summary": "Interactive dashboards and apps in HTML, CSS and JavaScript, including maps, charts and live data.",
-      "depth": "Advanced",
+      "depth": "Working",
       "verified": false,
       "first_seen": "2025",
       "last_seen": "2026-10",
@@ -149,7 +153,8 @@
           "note": "A web app that lets other people generate their own recap dashboard (March 2026).",
           "link": "https://recap-builder.vercel.app/"
         }
-      ]
+      ],
+      "self_rating": 3
     },
     {
       "id": "python-pipelines",
@@ -170,7 +175,8 @@
           "title": "Pipelines",
           "note": "Social API pulls, payment-to-ad conversion matching, workout database parsing and HTML email rendering."
         }
-      ]
+      ],
+      "self_rating": 3
     },
     {
       "id": "scheduled-monitoring",
@@ -190,7 +196,8 @@
           "title": "Daily and weekly digests",
           "note": "Business, market and local-area summaries delivered by email on a fixed schedule."
         }
-      ]
+      ],
+      "self_rating": 3
     },
     {
       "id": "github-deploy",
@@ -211,14 +218,15 @@
           "title": "Static sites",
           "note": "Several Pages sites deployed from GitHub, with verification after each push."
         }
-      ]
+      ],
+      "self_rating": 3
     },
     {
       "id": "workflow-trackers",
       "name": "Workflow and tracker apps",
       "category": "Web, Software and Automation",
       "summary": "Task, inventory and hours trackers for an academic office, built on Google Apps Script. No records appear here.",
-      "depth": "Working",
+      "depth": "Advanced",
       "verified": false,
       "first_seen": "2026-07",
       "last_seen": "2026-10",
@@ -232,7 +240,8 @@
           "title": "Office tool set",
           "note": "Built and maintained several internal trackers, including an HR tracker, since starting in the role in July 2026."
         }
-      ]
+      ],
+      "self_rating": 4
     },
     {
       "id": "test-prep-app",
@@ -252,7 +261,8 @@
           "title": "AFOQT app",
           "note": "Built and working. Needs a link and a first-built date from you."
         }
-      ]
+      ],
+      "self_rating": 3
     },
     {
       "id": "website-admin",
@@ -274,7 +284,8 @@
           "note": "Custom HTML blocks, schema markup, pricing and FAQ blocks, and a mobile menu fix.",
           "link": "https://jdmeyersjr.com"
         }
-      ]
+      ],
+      "self_rating": 4
     },
     {
       "id": "contracts",
@@ -294,14 +305,15 @@
           "title": "Template set",
           "note": "Versioned templates for weddings, portraits and video, signed through an online contract flow."
         }
-      ]
+      ],
+      "self_rating": 4
     },
     {
       "id": "pricing-policy",
       "name": "Pricing and policy design",
       "category": "Business Operations",
       "summary": "Tier structure, add-on pricing, deposit, travel and delivery-window policies.",
-      "depth": "Working",
+      "depth": "Advanced",
       "verified": false,
       "first_seen": null,
       "last_seen": "2026-10",
@@ -314,14 +326,15 @@
           "title": "Policy standardization",
           "note": "Uniform delivery windows and retention policy across service lines (October 2026)."
         }
-      ]
+      ],
+      "self_rating": 4
     },
     {
       "id": "instructional-series",
       "name": "Instructional video series",
       "category": "Teaching",
       "summary": "Scripted, sequenced short-form lessons published on a daily cadence.",
-      "depth": "Working",
+      "depth": "Advanced",
       "verified": false,
       "first_seen": "2026-06",
       "last_seen": "2026-07",
@@ -334,7 +347,8 @@
           "title": "Enlistment education series",
           "note": "25 videos on 25 consecutive days (June 24 to July 18, 2026) covering the path from job choice to training."
         }
-      ]
+      ],
+      "self_rating": 4
     }
   ],
   "category_blurbs": {
