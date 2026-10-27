@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JD Meyers: Skills</title>
+<meta name="description" content="Skills profile for JD Meyers, backed by real work.">
+<style>
+:root{
+  --bg:#0b0d10; --panel:#12161b; --line:#232a33; --text:#e8eaed; --muted:#98a2b3;
+  --accent:#8ea8ff; --chip:#1a2029;
+}
+*{box-sizing:border-box}
+html{color-scheme:dark}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+.wrap{max-width:860px;margin:0 auto;padding:48px 20px 72px}
+h1{font-size:2rem;margin:0 0 6px;letter-spacing:-.01em}
+.headline{color:var(--accent);margin:0 0 14px;font-size:1.05rem}
+.summary{color:var(--muted);margin:0 0 28px;max-width:70ch}
+.bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:34px}
+.chip{background:var(--chip);border:1px solid var(--line);color:var(--text);padding:6px 14px;border-radius:999px;font:inherit;font-size:.9rem;cursor:pointer;text-decoration:none}
+.chip:hover{border-color:var(--accent)}
+.chip[aria-current="true"]{border-color:var(--accent);color:var(--accent)}
+.spacer{flex:1}
+h2{font-size:.78rem;text-transform:uppercase;letter-spacing:.14em;color:var(--muted);margin:36px 0 12px;font-weight:600}
+.skill{background:var(--panel);border:1px solid var(--line);border-radius:12px;margin:0 0 10px}
+.skill summary{list-style:none;cursor:pointer;padding:16px 18px;display:grid;grid-template-columns:1fr auto;gap:4px 16px}
+.skill summary::-webkit-details-marker{display:none}
+.skill[open]{border-color:#2f3947}
+.name{font-weight:600}
+.meta{color:var(--muted);font-size:.85rem;text-align:right;white-space:nowrap}
+.desc{grid-column:1 / -1;color:var(--muted);font-size:.95rem}
+.depth{display:inline-block;border:1px solid var(--accent);color:var(--accent);border-radius:999px;padding:0 9px;font-size:.78rem;margin-right:8px}
+.ev{padding:0 18px 16px;border-top:1px solid var(--line)}
+.ev h3{font-size:.85rem;margin:14px 0 2px}
+.ev p{margin:0;color:var(--muted);font-size:.93rem}
+.ev a{color:var(--accent);word-break:break-all}
+footer{margin-top:44px;color:var(--muted);font-size:.85rem;border-top:1px solid var(--line);padding-top:16px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+#err{color:#ff9b9b}
+@media (max-width:560px){.skill summary{grid-template-columns:1fr}.meta{text-align:left}}
+@media print{
+  :root{color-scheme:light}
+  body{background:#fff;color:#000;font-size:11pt}
+  .wrap{padding:0;max-width:none}
+  .bar,.chip{display:none}
+  .skill{border:1px solid #bbb;background:#fff;break-inside:avoid;margin-bottom:6px}
+  .skill summary{padding:8px 10px}
+  .desc,.meta,.ev p,.summary,h2{color:#333}
+  .headline,.depth,.ev a{color:#000;border-color:#000}
+  .ev{display:block;padding:0 10px 8px}
+  h1{font-size:20pt}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1 id="name">Skills</h1>
+  <p class="headline" id="headline"></p>
+  <p class="summary" id="summary"></p>
+  <div class="bar" id="bar"></div>
+  <div id="list"></div>
+  <p id="err" hidden>Could not load skills.json.</p>
+  <footer><span id="stamp"></span><a class="chip" href="#" onclick="window.print();return false">Print one page</a></footer>
+</div>
+<script>
+(function(){
+  var qs = new URLSearchParams(location.search);
+  var current = qs.get("view") || "all";
+
+  function el(tag, cls, text){
+    var e = document.createElement(tag);
+    if(cls) e.className = cls;
+    if(text != null) e.textContent = text;
+    return e;
+  }
+
+  fetch("skills.json", {cache:"no-cache"}).then(function(r){
+    if(!r.ok) throw new Error("load");
+    return r.json();
+  }).then(render).catch(function(){
+    document.getElementById("err").hidden = false;
+  });
+
+  function render(data){
+    if(!data.views[current]) current = "all";
+    document.title = data.name + ": Skills";
+    document.getElementById("name").textContent = data.name;
+    document.getElementById("headline").textContent = data.headline;
+    document.getElementById("summary").textContent = data.summary;
+    document.getElementById("stamp").textContent = "Last updated " + data.updated;
+
+    var bar = document.getElementById("bar");
+    Object.keys(data.views).forEach(function(key){
+      var a = el("a", "chip", data.views[key].label);
+      a.href = key === "all" ? "?" : "?view=" + key;
+      if(key === current) a.setAttribute("aria-current", "true");
+      bar.appendChild(a);
+    });
+
+    var tags = data.views[current].tags;
+    var shown = data.skills.filter(function(s){
+      if(s.tier !== "public") return false;
+      return !tags.length || s.audiences.some(function(t){ return tags.indexOf(t) > -1; });
+    });
+
+    var list = document.getElementById("list");
+    data.categories.forEach(function(cat){
+      var items = shown.filter(function(s){ return s.category === cat; });
+      if(!items.length) return;
+      list.appendChild(el("h2", null, cat));
+      items.forEach(function(s){ list.appendChild(card(s)); });
+    });
+  }
+
+  function card(s){
+    var d = el("details", "skill");
+    var sum = el("summary");
+    sum.appendChild(el("span", "name", s.name));
+
+    var meta = el("span", "meta");
+    if(s.verified && s.depth){ meta.appendChild(el("span", "depth", s.depth)); }
+    if(s.last_seen){ meta.appendChild(document.createTextNode("Last used " + s.last_seen)); }
+    sum.appendChild(meta);
+    sum.appendChild(el("span", "desc", s.summary));
+    d.appendChild(sum);
+
+    var ev = el("div", "ev");
+    s.evidence.forEach(function(e){
+      ev.appendChild(el("h3", null, e.title));
+      var p = el("p", null, e.note);
+      if(e.link){
+        p.appendChild(document.createTextNode(" "));
+        var a = el("a", null, e.link.replace(/^https?:\/\//, ""));
+        a.href = e.link; a.rel = "noopener";
+        p.appendChild(a);
+      }
+      ev.appendChild(p);
+    });
+    d.appendChild(ev);
+    return d;
+  }
+})();
+</script>
+</body>
+</html>

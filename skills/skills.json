@@ -1,0 +1,299 @@
+{
+  "updated": "2026-10-27",
+  "name": "JD Meyers",
+  "headline": "Photo, video and drone operator who builds web tools and automation.",
+  "summary": "I run a photography, videography and FAA Part 107 drone business in the North Country of New York, and I build the dashboards, pipelines and contracts that keep it running. This page lists the skills I can back with real work. Depth markers appear only after an entry has been checked against its evidence.",
+  "views": {
+    "all": {
+      "label": "All",
+      "tags": []
+    },
+    "photo": {
+      "label": "Photo and video",
+      "tags": [
+        "photo"
+      ]
+    },
+    "tech": {
+      "label": "Web and automation",
+      "tags": [
+        "tech"
+      ]
+    },
+    "higher-ed": {
+      "label": "Higher ed",
+      "tags": [
+        "higher-ed"
+      ]
+    }
+  },
+  "categories": [
+    "Photo, Video and Drone",
+    "Web, Software and Automation",
+    "Business Operations",
+    "Teaching"
+  ],
+  "skills": [
+    {
+      "id": "wedding-photo-video",
+      "name": "Wedding photography and videography",
+      "category": "Photo, Video and Drone",
+      "summary": "Full-day coverage with tiered photo and video packages, multi-camera video and a defined delivery process.",
+      "depth": "Advanced",
+      "verified": false,
+      "first_seen": null,
+      "last_seen": "2026-10",
+      "audiences": [
+        "photo"
+      ],
+      "tier": "public",
+      "evidence": [
+        {
+          "title": "2026 wedding season",
+          "note": "Paid coverage across the season, from preparation through delivery and review requests.",
+          "link": "https://jdmeyersjr.com"
+        }
+      ]
+    },
+    {
+      "id": "portrait-real-estate",
+      "name": "Portrait, graduation and real estate photography",
+      "category": "Photo, Video and Drone",
+      "summary": "Seniors, graduations, families and real estate, plus a studio headshot service launched in October 2026.",
+      "depth": "Advanced",
+      "verified": false,
+      "first_seen": null,
+      "last_seen": "2026-10",
+      "audiences": [
+        "photo"
+      ],
+      "tier": "public",
+      "evidence": [
+        {
+          "title": "Studio headshots",
+          "note": "New service line with its own equipment kit, light and dark backgrounds, and a signup system.",
+          "link": "https://jdmeyersjr.com"
+        }
+      ]
+    },
+    {
+      "id": "video-audio-post",
+      "name": "Video and audio post-production",
+      "category": "Photo, Video and Drone",
+      "summary": "Final Cut Pro editing, highlight and full-ceremony edits, and licensed-music scoring.",
+      "depth": "Advanced",
+      "verified": false,
+      "first_seen": "2019",
+      "last_seen": "2026-06",
+      "audiences": [
+        "photo"
+      ],
+      "tier": "public",
+      "evidence": [
+        {
+          "title": "Multi-camera editing",
+          "note": "Edit plans for three-angle stage productions starting in 2019, and delivered client films in 2026."
+        },
+        {
+          "title": "Audio",
+          "note": "Logic Pro project work and licensed music for client video. This is the thinnest part of the skill."
+        }
+      ]
+    },
+    {
+      "id": "commercial-drone",
+      "name": "Commercial drone operations",
+      "category": "Photo, Video and Drone",
+      "summary": "FAA Part 107 remote pilot work: aerial photo and video, airspace authorization, flight logging and risk assessment.",
+      "depth": "Advanced",
+      "verified": false,
+      "first_seen": null,
+      "last_seen": "2026-09",
+      "audiences": [
+        "photo"
+      ],
+      "tier": "public",
+      "evidence": [
+        {
+          "title": "Flight discipline",
+          "note": "Maintained flight logs, a LAANC and flight-planning workflow, and a standardized pre-flight risk assessment template."
+        },
+        {
+          "title": "Subcontract work",
+          "note": "Operator work for drone service networks in 2025 and 2026."
+        }
+      ]
+    },
+    {
+      "id": "front-end",
+      "name": "Front-end web development",
+      "category": "Web, Software and Automation",
+      "summary": "Interactive dashboards and apps in HTML, CSS and JavaScript, including maps, charts and live data.",
+      "depth": "Advanced",
+      "verified": false,
+      "first_seen": "2025",
+      "last_seen": "2026-10",
+      "audiences": [
+        "tech",
+        "higher-ed"
+      ],
+      "tier": "public",
+      "evidence": [
+        {
+          "title": "Monthly recap dashboard",
+          "note": "Redesigned from scratch and shared with friends every month since February 2026.",
+          "link": "https://julietdeltaone.github.io/monthly-recap/"
+        },
+        {
+          "title": "Recap builder",
+          "note": "A web app that lets other people generate their own recap dashboard (March 2026).",
+          "link": "https://recap-builder.vercel.app/"
+        }
+      ]
+    },
+    {
+      "id": "python-pipelines",
+      "name": "Python scripting and data pipelines",
+      "category": "Web, Software and Automation",
+      "summary": "Scripts that pull from APIs, parse databases, match records and render reports.",
+      "depth": "Working",
+      "verified": false,
+      "first_seen": "2026-01",
+      "last_seen": "2026-10",
+      "audiences": [
+        "tech",
+        "higher-ed"
+      ],
+      "tier": "public",
+      "evidence": [
+        {
+          "title": "Pipelines",
+          "note": "Social API pulls, payment-to-ad conversion matching, workout database parsing and HTML email rendering."
+        }
+      ]
+    },
+    {
+      "id": "scheduled-monitoring",
+      "name": "Scheduled monitoring and digest systems",
+      "category": "Web, Software and Automation",
+      "summary": "Recurring digests and alerts that compare against a baseline and only report changes.",
+      "depth": "Working",
+      "verified": false,
+      "first_seen": "2026-09",
+      "last_seen": "2026-10",
+      "audiences": [
+        "tech"
+      ],
+      "tier": "public",
+      "evidence": [
+        {
+          "title": "Daily and weekly digests",
+          "note": "Business, market and local-area summaries delivered by email on a fixed schedule."
+        }
+      ]
+    },
+    {
+      "id": "github-deploy",
+      "name": "Git and GitHub Pages deployment",
+      "category": "Web, Software and Automation",
+      "summary": "Repositories, static-site deployment, access token rotation and secret-exposure checks.",
+      "depth": "Working",
+      "verified": false,
+      "first_seen": "2026-02",
+      "last_seen": "2026-10",
+      "audiences": [
+        "tech",
+        "higher-ed"
+      ],
+      "tier": "public",
+      "evidence": [
+        {
+          "title": "Static sites",
+          "note": "Several Pages sites deployed from GitHub, with verification after each push."
+        }
+      ]
+    },
+    {
+      "id": "website-admin",
+      "name": "Website build and administration",
+      "category": "Web, Software and Automation",
+      "summary": "A business site on Squarespace with custom code blocks, structured data and written edit guides.",
+      "depth": "Advanced",
+      "verified": false,
+      "first_seen": "2025",
+      "last_seen": "2026-10",
+      "audiences": [
+        "tech",
+        "photo"
+      ],
+      "tier": "public",
+      "evidence": [
+        {
+          "title": "jdmeyersjr.com",
+          "note": "Custom HTML blocks, schema markup, pricing and FAQ blocks, and a mobile menu fix.",
+          "link": "https://jdmeyersjr.com"
+        }
+      ]
+    },
+    {
+      "id": "contracts",
+      "name": "Contract drafting and builder tooling",
+      "category": "Business Operations",
+      "summary": "Service contracts per offering with versioned templates, a clause library and a self-serve builder.",
+      "depth": "Advanced",
+      "verified": false,
+      "first_seen": "2025",
+      "last_seen": "2026-10",
+      "audiences": [
+        "photo"
+      ],
+      "tier": "public",
+      "evidence": [
+        {
+          "title": "Template set",
+          "note": "Versioned templates for weddings, portraits and video, signed through an online contract flow."
+        }
+      ]
+    },
+    {
+      "id": "pricing-policy",
+      "name": "Pricing and policy design",
+      "category": "Business Operations",
+      "summary": "Tier structure, add-on pricing, deposit, travel and delivery-window policies.",
+      "depth": "Working",
+      "verified": false,
+      "first_seen": null,
+      "last_seen": "2026-10",
+      "audiences": [
+        "photo"
+      ],
+      "tier": "public",
+      "evidence": [
+        {
+          "title": "Policy standardization",
+          "note": "Uniform delivery windows and retention policy across service lines (October 2026)."
+        }
+      ]
+    },
+    {
+      "id": "instructional-series",
+      "name": "Instructional video series",
+      "category": "Teaching",
+      "summary": "Scripted, sequenced short-form lessons published on a daily cadence.",
+      "depth": "Working",
+      "verified": false,
+      "first_seen": "2026-06",
+      "last_seen": "2026-07",
+      "audiences": [
+        "higher-ed"
+      ],
+      "tier": "public",
+      "evidence": [
+        {
+          "title": "Enlistment education series",
+          "note": "25 videos on 25 consecutive days (June 24 to July 18, 2026) covering the path from job choice to training."
+        }
+      ]
+    }
+  ]
+}
