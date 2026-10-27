@@ -214,6 +214,47 @@
       ]
     },
     {
+      "id": "workflow-trackers",
+      "name": "Workflow and tracker apps",
+      "category": "Web, Software and Automation",
+      "summary": "Task, inventory and hours trackers for an academic office, built on Google Apps Script. No records appear here.",
+      "depth": "Working",
+      "verified": false,
+      "first_seen": "2026-07",
+      "last_seen": "2026-10",
+      "audiences": [
+        "tech",
+        "higher-ed"
+      ],
+      "tier": "public",
+      "evidence": [
+        {
+          "title": "Office tool set",
+          "note": "Built and maintained several internal trackers, including an HR tracker, since starting in the role in July 2026."
+        }
+      ]
+    },
+    {
+      "id": "test-prep-app",
+      "name": "Test-prep web app",
+      "category": "Web, Software and Automation",
+      "summary": "A working web app for AFOQT study practice.",
+      "depth": "Working",
+      "verified": false,
+      "first_seen": null,
+      "last_seen": "2026-10",
+      "audiences": [
+        "tech"
+      ],
+      "tier": "public",
+      "evidence": [
+        {
+          "title": "AFOQT app",
+          "note": "Built and working. Needs a link and a first-built date from you."
+        }
+      ]
+    },
+    {
       "id": "website-admin",
       "name": "Website build and administration",
       "category": "Web, Software and Automation",
@@ -295,5 +336,23 @@
         }
       ]
     }
-  ]
+  ],
+  "category_blurbs": {
+    "Photo, Video and Drone": {
+      "title": "I photograph, film and fly.",
+      "sub": "Weddings, portraits, real estate and aerial work for clients across the North Country."
+    },
+    "Web, Software and Automation": {
+      "title": "I build web tools and automation.",
+      "sub": "Dashboards, scripts and sites that save time and keep running on their own."
+    },
+    "Business Operations": {
+      "title": "I run the business side.",
+      "sub": "Contracts, pricing and policies that keep a solo studio organized."
+    },
+    "Teaching": {
+      "title": "I turn knowledge into lessons.",
+      "sub": "Short, sequenced instruction that others can follow."
+    }
+  }
 }

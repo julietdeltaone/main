@@ -28,7 +28,7 @@ def main(master_path):
                            for e in s.get("evidence", [])]
         skills.append(row)
     out = {k: master[k] for k in
-           ("updated", "name", "headline", "summary", "views", "categories")}
+           ("updated", "name", "headline", "summary", "views", "categories", "category_blurbs")}
     out["skills"] = skills
     target = Path(__file__).resolve().parent.parent / "skills" / "skills.json"
     target.write_text(json.dumps(out, indent=2) + "\n")
